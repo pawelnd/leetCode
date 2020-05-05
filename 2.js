@@ -17,8 +17,8 @@ function calculateTransaction(prices) {
     for (let buy = 0; buy < prices.length; buy++) {
         let max = 0;
         for (let sell = buy + 1; sell < prices.length; sell++) {
-            const profit = prices[sell] - prices[buy] + calculateTransaction(prices.slice(sell + 1));
-
+            const profitForTransaction = prices[sell] - prices[buy];
+            const profitForRest = calculateTransaction(prices.slice(sell + 1));
             console.log('translaction', buy, sell, 'profit');
 
 
